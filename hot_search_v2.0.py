@@ -16,8 +16,8 @@ from googleapiclient.discovery import build
 
 # 設定
 # "いたの" Streamlit Secretsからサービスアカウントキーを取得する処理。(2024/12/13)
-# Streamlit Cloud上でも同様の変数名での指定必要。
-service_account_info = st.secrets["SERVICE_ACCOUNT_FILE"]
+# Streamlit Cloud上では、TOML形式にてst.secretsに設定する必要があるため、以下の参照キーもTOML変換時に設定した"general"を指定
+service_account_info = st.secrets["general"]
 # いたのでAPIと連携させたスプレッドシートのURLです。こちらはサービスアカウントキーを私のものを使って貰えればそのまま使えるものと推測します。
 SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1KNOF6o3k12tvaHiysZX0ntRlOC44nQP_f-W4mUNQdGg/edit"  
 # いたののHot PepperのAPI KEYです。こちらは漏れてもまあ問題ないかな、という事でベタ打ちしています。
